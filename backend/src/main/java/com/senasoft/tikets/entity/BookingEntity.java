@@ -4,7 +4,7 @@ package com.senasoft.tikets.entity;
 import java.util.List;
 
 
-import com.senasoft.tikets.enums.StatusEnum;
+import com.senasoft.tikets.enums.BookingStatusEnum;
 import com.senasoft.tikets.enums.TypeEnum;
 
 import jakarta.persistence.Entity;
@@ -36,7 +36,7 @@ public class BookingEntity {
 
     private Double totalPrice;
 
-    private StatusEnum status;
+    private BookingStatusEnum status;
 
     @ManyToOne
     @JoinColumn(name="buyer_id",nullable=false)
