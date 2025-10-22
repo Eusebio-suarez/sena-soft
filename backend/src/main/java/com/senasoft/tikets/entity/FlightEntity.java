@@ -3,6 +3,8 @@ package com.senasoft.tikets.entity;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.senasoft.tikets.enums.TypeEnum;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -31,7 +33,11 @@ public class FlightEntity {
 
     private String destination;
 
-    private LocalDateTime date;
+    private TypeEnum type;
+
+    private LocalDateTime departureDate;
+
+    private LocalDateTime arrivalDate;
 
     private Double price;
 
@@ -41,7 +47,4 @@ public class FlightEntity {
 
     @OneToMany(mappedBy="flight")
     private List<BookingEntity> bookings;
-
-    @OneToMany(mappedBy="flight")
-    private List<SeatEntity> seats;
 }

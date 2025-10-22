@@ -39,10 +39,12 @@ public class PassengerEntity {
 
     private String email;
 
+    private Long seatNumber;
+
     @ManyToOne
     @JoinColumn(name="booking_id")
     private BookingEntity booking;
 
     @OneToOne(mappedBy="passenger")
-    private SeatEntity seat;
+    private TiketEntity tiket;
 }
