@@ -1,34 +1,34 @@
 package com.senasoft.tikets.entity;
 
-import java.util.List;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity
 @Data
+@Entity
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
-@Table(name="models")
-public class PlaneModel {
-
+@AllArgsConstructor
+public class TiketEntity {
+    
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 
-    private String model;
+    @OneToOne
+    @JoinColumn(name="passenger_id")
+    private PassengerEntity passenger;
 
-    private Number ability;
+    @ManyToOne
+    @JoinColumn(name="booking_id")
+    private BookingEntity booking;
 
-    @OneToMany(mappedBy = "model")
-    private List<PlaneEntity> plane;
 }
