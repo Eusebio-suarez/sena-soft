@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menú Principal</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 <body>
     
@@ -36,7 +38,7 @@
 
 
 
-<div id="controls-carousel" class="relative w-full mt-4 mb-15" data-carousel="slide">
+<div id="controls-carousel" class="relative w-full mt-4 mb-15 sm:flex-col" data-carousel="slide">
     <!-- Carousel wrapper -->
     <div class="relative h-70 overflow-hidden rounded-lg md:h-96">
          <!-- Item 1 -->
@@ -75,7 +77,7 @@
                             </h1>
 
                             <p class="text-surface-0/90 lg:text-surface-700 dark:text-surface-200 text-xl leading-normal mb-8 max-w-xl lg:max-w-none">
-                                Somos una empresa que busca la innovación el uso de las tecnologías y poder revolucionar en el mercado de las aereolineas
+                                Somos una empresa que busca la innovación el uso de las tecnologías y poder revolucionar en el mercado de las aereolineas.
                             </p>
 
                             <div class="flex items-center gap-4 justify-center lg:justify-start">
@@ -101,9 +103,50 @@
             </div>
         </div>
 
+
+         <div class="mt-4 min-h-160 lg:min-h-0 bg-surface-0 dark:bg-surface-900 flex lg:flex-row flex-col mt-40 mb-10">
+            <div class="flex lg:flex lg:flex-row flex-col justify-center md:justify-normal h-full flex-1">
+                
+                <div class="absolute lg:relative inset-0 lg:inset-auto flex-1">
+                    <div class="absolute lg:hidden inset-0 bg-surface 900/60 dark:bg-surface-900/80 z-10"></div>
+                    <img
+                        src="style/tiquetes.jpg"
+                        alt="hero-1"
+                        class="h-full w-full object-cover xl:[clip-path:polygon(12%_0,100%_0%,100%_100%,0_100%)]"
+                    />
+                </div>
+
+                <div class="relative flex-1 z-20 flex items-center justify-center">
+                    <div class="flex items-center justify-center h-full">
+                        <div class="w-full max-w-2xl px-6 py-12 lg:p-12 xl:p-16 text-center lg:text-left">
+                            <h1 class="text-4xl xl:text-5xl font-bold text-surface-0 lg:text-surface-900 dark:text-surface-0 mb-6 leading-tight!">
+                                <span class="block">NO más espera</span>
+                            </h1>
+
+                            <p class="text-surface-0/90 lg:text-surface-700 dark:text-surface-200 text-xl leading-normal mb-8 max-w-xl lg:max-w-none">
+                                Consigue los tiquetes para el viaje de tus sueños, que esperas para adquirir nuestros servicios, SENA - AirLines, la aereolinea de los colombianos.
+                            </p>
+
+                            <div class="flex items-center gap-4 justify-center lg:justify-start">
+                                <button pButton type="button">
+                                    <span pButtonLabel></span>
+                                </button>
+                                <button pButton type="button" outlined>
+                                    <span pButtonLabel></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+
+
         
 
-<footer class="fixed bottom-0 left-0 z-20 w-full p-2 bg-white border-t border-gray-200 shadow-sm md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">
+<footer class="fixed bottom-0 left-0 z-20 w-full p-0,5 bg-white border-t border-gray-200 shadow-sm md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800 dark:border-gray-600">
     <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2025 <a href="#" class="hover:underline">SENA - AirLines</a>
     </span>
     <ul class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0">
