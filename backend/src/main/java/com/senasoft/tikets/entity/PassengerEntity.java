@@ -3,6 +3,7 @@ package com.senasoft.tikets.entity;
 import java.time.LocalDate;
 
 import com.senasoft.tikets.enums.GenderEnum;
+import com.senasoft.tikets.enums.SeatStatusEnum;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -41,7 +42,7 @@ public class PassengerEntity {
 
     private Long seatNumber;
 
-    private 
+    private SeatStatusEnum seatStatus;
 
     @ManyToOne
     @JoinColumn(name="booking_id")

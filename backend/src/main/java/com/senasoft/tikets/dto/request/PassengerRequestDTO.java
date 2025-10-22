@@ -7,6 +7,7 @@ import com.senasoft.tikets.enums.GenderEnum;
 import io.micrometer.common.lang.NonNull;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.Positive;
 import lombok.Data;
 
 @Data
@@ -30,7 +31,7 @@ public class PassengerRequestDTO {
     @NotBlank
     private String email;
 
-    @NotBlank
+    @Positive
     private Long seatNumber;
 
 }
