@@ -45,4 +45,7 @@ public class PassengerEntity {
 
     @OneToOne(mappedBy="passenger")
     private SeatEntity seat;
+
+    @OneToOne(mappedBy="passenger")
+    private TiketEntity tiket;
 }
