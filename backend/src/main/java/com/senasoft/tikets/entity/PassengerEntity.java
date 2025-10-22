@@ -2,7 +2,9 @@ package com.senasoft.tikets.entity;
 
 import java.time.LocalDate;
 
+import com.senasoft.tikets.enums.DocEnum;
 import com.senasoft.tikets.enums.GenderEnum;
+import com.senasoft.tikets.enums.SeatStatusEnum;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -29,6 +31,10 @@ public class PassengerEntity {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 
+    private String name;
+
+    private DocEnum docType;
+
     private LocalDate birth;
 
     private GenderEnum gender;
@@ -40,6 +46,8 @@ public class PassengerEntity {
     private String email;
 
     private Long seatNumber;
+
+    private SeatStatusEnum seatStatus;
 
     @ManyToOne
     @JoinColumn(name="booking_id")
