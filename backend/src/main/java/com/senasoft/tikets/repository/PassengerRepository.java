@@ -16,4 +16,6 @@ public interface PassengerRepository extends JpaRepository<PassengerEntity,Long>
 
     long countByBookingId(Long bookingId);
 
+    boolean existsByBookingIdAndSeatNumber(Long bookingId, Long seatNumber);
+
 }

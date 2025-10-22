@@ -12,6 +12,7 @@ import com.senasoft.tikets.dto.request.PassengerRequestDTO;
 import com.senasoft.tikets.services.PassengerService;
 import com.senasoft.tikets.utils.ApiResponse;
 
+
 @RestController
 @RequestMapping("/api/v1/passenges")
 public class PassengerController {

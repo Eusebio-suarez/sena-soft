@@ -55,6 +55,7 @@ public class PassengerService {
 
         FlightEntity flight = flightOptional.get();
 
+        //validar que el asiento este en el rango disponible
         if(passengerRequestDTO.getSeatNumber()>flight.getPlane().getCapacity()){
             throw new ExceptionImpl("no se encontro el asiento",HttpStatus.NOT_FOUND);
         }
@@ -64,8 +65,15 @@ public class PassengerService {
             throw new ExceptionImpl("asiento ocupado", HttpStatus.CONFLICT);
         }
 
+        //verificar que el asiento no este reservado por un compaño
+        if(passengerRepository.existsByBookingIdAndSeatNumber(booking.getId(), passengerRequestDTO.getSeatNumber())){
+            throw new ExceptionImpl("el asiento ya fue reservado por un compañero", HttpStatus.CONFLICT);
+        }
+
         //construir el pasajero
         PassengerEntity passenger = PassengerEntity.builder()
+            .name(passengerRequestDTO.getName())
+            .docType(passengerRequestDTO.getDocType())
             .birth(passengerRequestDTO.getBirth())
             .gender(passengerRequestDTO.getGender())
             .infant(passengerRequestDTO.isInfant())
@@ -76,7 +84,7 @@ public class PassengerService {
             .booking(booking)
             .build();
         
-        //registarr el passagero
+        //registarr el pasagero
         passengerRepository.save(passenger);
 
         //actualizar el precio de la reserva

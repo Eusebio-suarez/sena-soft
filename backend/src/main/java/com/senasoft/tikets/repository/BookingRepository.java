@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.senasoft.tikets.entity.BookingEntity;
 
 @Repository
-public interface BookingRepository extends JpaRepository<BookingEntity, Long> {}
+public interface BookingRepository extends JpaRepository<BookingEntity, Long> {
+    
+}

@@ -2,6 +2,7 @@ package com.senasoft.tikets.entity;
 
 import java.time.LocalDate;
 
+import com.senasoft.tikets.enums.DocEnum;
 import com.senasoft.tikets.enums.GenderEnum;
 import com.senasoft.tikets.enums.SeatStatusEnum;
 
@@ -29,6 +30,10 @@ public class PassengerEntity {
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
+
+    private String name;
+
+    private DocEnum docType;
 
     private LocalDate birth;
 

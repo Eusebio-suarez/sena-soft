@@ -2,9 +2,10 @@ package com.senasoft.tikets.dto.request;
 
 import java.time.LocalDate;
 
+import com.senasoft.tikets.enums.DocEnum;
 import com.senasoft.tikets.enums.GenderEnum;
 
-import io.micrometer.common.lang.NonNull;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Positive;
@@ -13,8 +14,11 @@ import lombok.Data;
 @Data
 public class PassengerRequestDTO {
 
-    @NonNull
     private Long bookingId;
+
+    private String name;
+
+    private DocEnum docType;
 
     @Past
     private LocalDate birth;
@@ -22,13 +26,12 @@ public class PassengerRequestDTO {
     @NotBlank
     private GenderEnum gender;
 
-    @NonNull
     private boolean infant;
 
     @NotBlank
     private String phone;
 
-    @NotBlank
+    @Email
     private String email;
 
     @Positive

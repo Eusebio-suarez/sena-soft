@@ -1,7 +1,8 @@
 package com.senasoft.tikets.enums;
 
 public enum DocEnum {
-    CI,
+    CC,
     TI,
-    PE
+    PE,
+    RC
 }
