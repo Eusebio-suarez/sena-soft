@@ -10,6 +10,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,6 +21,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name="payments")
 public class PaymentEntity {
     
     @Id
@@ -42,6 +44,6 @@ public class PaymentEntity {
 
     private LocalDate date;
 
-    @OneToOne(mappedBy="payments")
+    @OneToOne(mappedBy="payment")
     private BookingEntity booking;
 }
