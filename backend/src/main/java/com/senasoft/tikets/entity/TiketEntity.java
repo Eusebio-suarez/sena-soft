@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,5 +26,9 @@ public class TiketEntity {
     @OneToOne
     @JoinColumn(name="passenger_id")
     private PassengerEntity passenger;
+
+    @ManyToOne
+    @JoinColumn(name="booking_id")
+    private BookingEntity booking;
 
 }

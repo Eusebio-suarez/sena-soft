@@ -1,11 +1,10 @@
 package com.senasoft.tikets.entity;
 
 
+import java.time.LocalDate;
 import java.util.List;
 
-
-import com.senasoft.tikets.enums.BookingStatusEnum;
-import com.senasoft.tikets.enums.TypeEnum;
+import com.senasoft.tikets.enums.StatusEnum;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -14,6 +13,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -32,15 +32,11 @@ public class BookingEntity {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 
-    private TypeEnum type;
+    private LocalDate date;
 
     private Double totalPrice;
 
-    private BookingStatusEnum status;
-
-    @ManyToOne
-    @JoinColumn(name="buyer_id",nullable=false)
-    private BuyerEntity buyer;
+    private StatusEnum status;
 
     @ManyToOne
     @JoinColumn(name="flight_id", nullable=false)
@@ -48,4 +44,12 @@ public class BookingEntity {
 
     @OneToMany(mappedBy="booking")
     private List<PassengerEntity> passengenrs;
+
+    @OneToMany(mappedBy="booking")
+    private List<TiketEntity> tikets;
+
+    @OneToOne
+    @JoinColumn(name="payment_id")
+    private PaymentEntity payment;
+
 }

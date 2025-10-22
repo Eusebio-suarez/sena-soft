@@ -1,6 +1,6 @@
 package com.senasoft.tikets.enums;
 
-public enum BookingStatusEnum {
+public enum StatusEnum {
     WAITING,
     CANCELED,
     COMPLETE

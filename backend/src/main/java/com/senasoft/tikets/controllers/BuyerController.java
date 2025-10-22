@@ -17,21 +17,5 @@ import com.senasoft.tikets.utils.ApiResponse;
 @RequestMapping("/api/v1/buyers")
 public class BuyerController {
     
-    @Autowired
-    private BuyerService buyerService;
-
-    @PostMapping("/register")
-    public ResponseEntity<ApiResponse<?>> register(@RequestBody BuyerRequest buyerRequest) {
-        
-        Long response = buyerService.registerBuyer(buyerRequest);
-
-        return ResponseEntity.status(HttpStatus.CREATED)
-            .body(ApiResponse.builder()
-                .success(true)
-                .message("exito")
-                .data(response)
-                .build()
-            );
-    }
     
 }

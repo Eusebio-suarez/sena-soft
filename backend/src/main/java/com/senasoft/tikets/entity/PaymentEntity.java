@@ -1,15 +1,15 @@
 package com.senasoft.tikets.entity;
 
-import java.util.List;
+import java.time.LocalDate;
 
 import com.senasoft.tikets.enums.DocEnum;
+import com.senasoft.tikets.enums.StatusEnum;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
+import jakarta.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -18,26 +18,30 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @Builder
-@AllArgsConstructor
 @NoArgsConstructor
-@Table(name="buyers")
-public class BuyerEntity {
-
+@AllArgsConstructor
+public class PaymentEntity {
+    
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 
-    private DocEnum docType;
-
-    private String docNumber;
-
     private String name;
 
-    private String phone;
+    private DocEnum docType;
+
+    private String numberDoc;
+    
+    private Double monto;
 
     private String email;
 
-    @OneToMany(mappedBy="buyer")
-    private List<BookingEntity> bokings;
+    private String phone;
 
+    private StatusEnum status;
+
+    private LocalDate date;
+
+    @OneToOne(mappedBy="payments")
+    private BookingEntity booking;
 }
