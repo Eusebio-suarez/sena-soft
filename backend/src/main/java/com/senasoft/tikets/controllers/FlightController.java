@@ -16,17 +16,17 @@ import com.senasoft.tikets.utils.ApiResponse;
 
 @RestController
 @RequestMapping("/api/v1/flights")
-public class BuyerController {
+public class FlightController {
     
     @Autowired
     private FlightService flightService;
 
     @GetMapping("")
-    public ResponseEntity<ApiResponse<?>> register() {
+    public ResponseEntity<ApiResponse<?>> getF4lights() {
         
         List<FlightResponseDTO> flights = flightService.getFlights();
 
-        return ResponseEntity.status(HttpStatus.CREATED)
+        return ResponseEntity.status(HttpStatus.OK)
             .body(ApiResponse.builder()
                 .success(true)
                 .message("exito")

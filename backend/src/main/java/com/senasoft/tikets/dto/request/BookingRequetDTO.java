@@ -8,4 +8,5 @@ public class BookingRequetDTO {
     
     @NotNull
     private Long flightId;
+
 }

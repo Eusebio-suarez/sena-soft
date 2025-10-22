@@ -41,6 +41,8 @@ public class PassengerEntity {
 
     private Long seatNumber;
 
+    private 
+
     @ManyToOne
     @JoinColumn(name="booking_id")
     private BookingEntity booking;
