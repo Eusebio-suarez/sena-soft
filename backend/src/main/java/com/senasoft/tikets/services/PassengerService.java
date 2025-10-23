@@ -74,6 +74,7 @@ public class PassengerService {
         PassengerEntity passenger = PassengerEntity.builder()
             .name(passengerRequestDTO.getName())
             .docType(passengerRequestDTO.getDocType())
+            .numberDoc(passengerRequestDTO.getNumberDoc())
             .birth(passengerRequestDTO.getBirth())
             .gender(passengerRequestDTO.getGender())
             .infant(passengerRequestDTO.isInfant())
