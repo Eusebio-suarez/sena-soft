@@ -3,7 +3,6 @@ package com.senasoft.tikets.entity;
 import java.time.LocalDate;
 
 import com.senasoft.tikets.enums.DocEnum;
-import com.senasoft.tikets.enums.StatusEnum;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -39,8 +38,6 @@ public class PaymentEntity {
     private String email;
 
     private String phone;
-
-    private StatusEnum status;
 
     private LocalDate date;
 
