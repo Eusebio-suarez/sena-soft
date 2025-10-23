@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SENA-AirLines - Menú Principal</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-50">
+
+  <!-- NAVBAR -->
+  <nav class="bg-blue-700 border-gray-200 dark:bg-gray-900">
+    <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+      <a href="https://www.sena.edu.co" class="flex items-center space-x-3 rtl:space-x-reverse">
+        <img src="style/logoSena.png" class="h-8" alt="Logo SENA" />
+        <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">SENA-AirLines</span>
+      </a>
+      <button data-collapse-toggle="navbar-default" type="button"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-300 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700"
+        aria-controls="navbar-default" aria-expanded="false">
+        <span class="sr-only">Abrir menú</span>
+        <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M1 1h15M1 7h15M1 13h15" />
+        </svg>
+      </button>
+      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <ul
+          class="font-medium flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-blue-700">
+          <li>
+            <a href="vistas/ruta_vuelo.html" class="block py-2 px-3 text-white rounded hover:bg-blue-600 md:hover:text-red-50">Agenda tu vuelo</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- SLIDER -->
+<div id="controls-carousel" class="relative w-full mt-4" data-carousel="slide" data-carousel-interval="4000">
+
+  <div class="relative h-64 overflow-hidden rounded-lg md:h-96 bg-black flex items-center justify-center">
+
+    <!-- Item 1 -->
+    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+      <img src="style/slider1.jpg"
+        class="block max-h-full max-w-full mx-auto object-contain rounded-lg transition-transform duration-700"
+        alt="Avión despegando">
+    </div>
+
+    <!-- Item 2 -->
+    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+      <img src="style/slider2.png"
+        class="block max-h-full max-w-full mx-auto object-contain rounded-lg transition-transform duration-700"
+        alt="Terminal aérea">
+    </div>
+
+    <!-- Item 3 -->
+    <div class="hidden duration-700 ease-in-out" data-carousel-item>
+      <img src="style/slider3.png"
+        class="block max-h-full max-w-full mx-auto object-contain rounded-lg transition-transform duration-700"
+        alt="Cielo azul">
+    </div>
+
+  </div>
+
+    <!-- Slider controls -->
+    <button type="button"
+      class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+      data-carousel-prev>
+      <span
+        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 focus:ring-4 focus:ring-white">
+        <svg class="w-4 h-4 text-white rtl:rotate-180" xmlns="http://www.w3.org/2000/svg" fill="none"
+          viewBox="0 0 6 10">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M5 1 1 5l4 4" />
+        </svg>
+        <span class="sr-only">Anterior</span>
+      </span>
+    </button>
+    <button type="button"
+      class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+      data-carousel-next>
+      <span
+        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 focus:ring-4 focus:ring-white">
+        <svg class="w-4 h-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="m1 9 4-4-4-4" />
+        </svg>
+        <span class="sr-only">Siguiente</span>
+      </span>
+    </button>
+  </div>
+
+  <!-- SECCIÓN QUIÉNES SOMOS -->
+  <section class="mt-8 flex flex-col lg:flex-row bg-white shadow-md rounded-lg overflow-hidden">
+    <div class="flex-1 flex items-center justify-center p-8 lg:p-16">
+      <div class="max-w-xl text-center lg:text-left">
+        <h2 class="text-4xl font-bold text-gray-800 mb-4">¿Quiénes somos?</h2>
+        <p class="text-gray-600 text-lg mb-6">
+          Somos una empresa que impulsa la innovación y el uso de las tecnologías para revolucionar el mercado de las aerolíneas.
+        </p>
+      </div>
+    </div>
+    <div class="flex-1">
+      <img src="style/aereopuerto.jpg" alt="Aereopuerto" class="w-full h-80 lg:h-full object-cover">
+    </div>
+  </section>
+
+  <!-- SECCIÓN TIQUETES -->
+  <section class="mt-12 flex flex-col lg:flex-row-reverse bg-white shadow-md rounded-lg overflow-hidden mb-20">
+    <div class="flex-1 flex items-center justify-center p-8 lg:p-16">
+      <div class="max-w-xl text-center lg:text-left">
+        <h2 class="text-4xl font-bold text-gray-800 mb-4">¡No más espera!</h2>
+        <p class="text-gray-600 text-lg mb-6">
+          Consigue los tiquetes para el viaje de tus sueños. SENA-AirLines, la aerolínea de los colombianos.
+        </p>
+      </div>
+    </div>
+    <div class="flex-1">
+      <img src="style/tiquetes.jpg" alt="Tiquetes" class="w-full h-80 lg:h-full object-cover">
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="w-full p-4 bg-white border-t border-gray-200 shadow-sm flex flex-col md:flex-row md:items-center md:justify-between">
+    <span class="text-sm text-gray-500 text-center md:text-left">© 2025
+      <a href="#" class="hover:underline">SENA-AirLines</a>
+    </span>
+    <ul class="flex flex-wrap justify-center md:justify-end mt-3 text-sm font-medium text-gray-500 sm:mt-0">
+      <li><a href="#" class="hover:underline me-4 md:me-6">About</a></li>
+      <li><a href="#" class="hover:underline me-4 md:me-6">Privacy Policy</a></li>
+      <li><a href="#" class="hover:underline">Contáctanos: +57 314 7688358</a></li>
+    </ul>
+  </footer>
+
+  <!-- SCRIPT SLIDER -->
+  <script>
+    const items = document.querySelectorAll('[data-carousel-item]');
+    let current = 0;
+
+    function showItem(index) {
+      items.forEach((item, i) => {
+        item.classList.toggle('hidden', i !== index);
+      });
+    }
+
+    document.querySelector('[data-carousel-next]').addEventListener('click', () => {
+      current = (current + 1) % items.length;
+      showItem(current);
+    });
+
+    document.querySelector('[data-carousel-prev]').addEventListener('click', () => {
+      current = (current - 1 + items.length) % items.length;
+      showItem(current);
+    });
+
+    // Mostrar el primer slide al cargar
+    showItem(current);
+  </script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+
+
+</body>
+</html>
