@@ -7,6 +7,9 @@ import org.springframework.stereotype.Repository;
 import com.senasoft.tikets.entity.PassengerEntity;
 
 import com.senasoft.tikets.enums.SeatStatusEnum;
+import java.util.List;
+import com.senasoft.tikets.entity.BookingEntity;
+
 
 
 @Repository
@@ -17,5 +20,7 @@ public interface PassengerRepository extends JpaRepository<PassengerEntity,Long>
     long countByBookingId(Long bookingId);
 
     boolean existsByBookingIdAndSeatNumber(Long bookingId, Long seatNumber);
+
+    List<PassengerEntity> findByBooking(BookingEntity booking);
 
 }
