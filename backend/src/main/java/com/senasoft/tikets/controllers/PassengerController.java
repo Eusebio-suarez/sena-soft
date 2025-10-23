@@ -14,7 +14,7 @@ import com.senasoft.tikets.utils.ApiResponse;
 
 
 @RestController
-@RequestMapping("/api/v1/passenges")
+@RequestMapping("/api/v1/passengers")
 public class PassengerController {
 
     @Autowired
