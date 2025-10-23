@@ -43,7 +43,7 @@ public class BookingEntity {
     private FlightEntity flight;
 
     @OneToMany(mappedBy="booking")
-    private List<PassengerEntity> passengenrs;
+    private List<PassengerEntity> passengers;
 
     @OneToMany(mappedBy="booking")
     private List<TiketEntity> tikets;

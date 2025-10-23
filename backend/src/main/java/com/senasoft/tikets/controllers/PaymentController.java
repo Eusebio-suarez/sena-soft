@@ -1,5 +1,7 @@
 package com.senasoft.tikets.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -8,29 +10,29 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.senasoft.tikets.dto.request.BookingRequetDTO;
-import com.senasoft.tikets.services.BookingService;
+import com.senasoft.tikets.dto.request.PaymentRequestDTO;
+import com.senasoft.tikets.dto.response.TiketResponseDTO;
+import com.senasoft.tikets.services.PaymentService;
 import com.senasoft.tikets.utils.ApiResponse;
 
 @RestController
-@RequestMapping("/api/v1/bookings")
-public class BookingCorntroller {
-
-    @Autowired
-    private BookingService bookingService;
+@RequestMapping("/api/v1/payments")
+public class PaymentController {
     
-    @PostMapping("/register")
-    public ResponseEntity<ApiResponse<?>> register(@RequestBody BookingRequetDTO bookingRequetDTO) {
+    @Autowired
+    private PaymentService paymentService;
+
+    @PostMapping("")
+    public ResponseEntity<ApiResponse<?>> pay(@RequestBody PaymentRequestDTO paymentRequestDTO) {
         
-        Long bookingId = bookingService.registerBooking(bookingRequetDTO.getFlightId());
+        List<TiketResponseDTO> tikets = paymentService.processPayment(paymentRequestDTO); 
 
         return ResponseEntity.status(HttpStatus.CREATED)
             .body(ApiResponse.builder()
                 .success(true)
                 .message("exito")
-                .data(bookingId)
+                .data(tikets)
                 .build()
             );
     }
-
 }

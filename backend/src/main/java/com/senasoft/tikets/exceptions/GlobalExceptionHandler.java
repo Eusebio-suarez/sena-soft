@@ -1,7 +1,5 @@
 package com.senasoft.tikets.exceptions;
 
-import org.springframework.dao.DataIntegrityViolationException;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -31,24 +29,6 @@ public class GlobalExceptionHandler {
             .body(ApiResponse.builder()
                 .success(false)
                 .message("faltan campos o formato incorrecto.")
-                .data(null)
-                .build()
-            );
-    }
-
-    @ExceptionHandler(DataIntegrityViolationException.class)
-    public ResponseEntity<ApiResponse<?>> handleUserException(DataIntegrityViolationException exception){
-
-        String message = "Error en los datos ingresados";
-
-        if (exception.getMessage().contains("Duplicate entry")) {
-            message = "El correo electrónico ya está registrado";
-        }
-
-        return ResponseEntity.status(HttpStatus.CONFLICT)
-            .body(ApiResponse.builder()
-                .success(false)
-                .message(message)
                 .data(null)
                 .build()
             );

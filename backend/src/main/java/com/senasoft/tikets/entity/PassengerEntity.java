@@ -33,6 +33,8 @@ public class PassengerEntity {
 
     private String name;
 
+    private String numberDoc;
+
     private DocEnum docType;
 
     private LocalDate birth;

@@ -20,6 +20,8 @@ public class PassengerRequestDTO {
 
     private DocEnum docType;
 
+    private String numberDoc;
+
     @Past
     private LocalDate birth;
 
