@@ -21,38 +21,60 @@
 
   <h2 class="text-center text-2xl font-semibold my-6">Selecciona tu asiento ✈️</h2>
 
+  <!-- Contenedor de asientos -->
   <div class="max-w-3xl mx-auto bg-white p-6 rounded-2xl shadow-md">
-
-    <div class="grid grid-cols-5 gap-4 justify-items-center">
-
-      <template id="fila-asientos">
-        <div class="seat bg-green-500 hover:bg-green-600 text-white font-bold rounded-lg flex items-center justify-center w-12 h-12 cursor-pointer">A1</div>
-      </template>
-      <script>
-        const container = document.currentScript.parentElement;
-        let seatNum = 1;
-        for (let fila = 1; fila <= 15; fila++) {
-          for (let col = 1; col <= 5; col++) {
-            if (col === 3) {
-              const pasillo = document.createElement('div');
-              pasillo.className = "w-6";
-              container.appendChild(pasillo);
-            } else {
-              const asiento = document.createElement('div');
-              asiento.className = "w-12 h-12 bg-green-500 hover:bg-green-600 text-white font-bold rounded-lg flex items-center justify-center cursor-pointer transition";
-              asiento.textContent = seatNum;
-              asiento.onclick = () => alert(`Asiento seleccionado: ${seatNum}`);
-              container.appendChild(asiento);
-              seatNum++;
-            }
-          }
-        }
-      </script>
-
-    </div>
+    <div id="contenedorAsientos" class="grid grid-cols-5 gap-4 justify-items-center"></div>
   </div>
 
-  <p class="text-center mt-6 text-gray-500">Haz clic en un asiento para seleccionarlo.</p>
+  <p class="text-center mt-6 text-gray-500">Haz clic en un asiento para reservarlo.</p>
+
+  <script>
+    const contenedor = document.getElementById('contenedorAsientos');
+    let seatNum = 1;
+
+    // 10 filas
+    for (let fila = 1; fila <= 10; fila++) {
+      for (let col = 1; col <= 5; col++) {
+        if (col === 3) {
+          const pasillo = document.createElement('div');
+          pasillo.className = "w-6";
+          contenedor.appendChild(pasillo);
+        } else {
+          var numActual = seatNum;
+
+          const divAsiento = document.createElement('div');
+          divAsiento.className = "w-20 h-20 bg-green-500 hover:bg-green-600 text-white font-bold rounded-lg flex items-center justify-center cursor-pointer transition";
+
+          const form = document.createElement('form');
+          form.method = "POST";
+          form.action = "";
+
+          const input = document.createElement('input');
+          input.type = "text";
+          input.name = "num_asiento";
+          input.value = numActual;
+
+          const boton = document.createElement('button');
+          boton.type = "submit";
+          boton.className = "hidden";
+
+          const label = document.createElement('span');
+          label.textContent = numActual;
+
+          form.appendChild(input);
+          form.appendChild(boton);
+          divAsiento.appendChild(label);
+          divAsiento.appendChild(form);
+
+          divAsiento.addEventListener('click', () => form.submit());
+
+          contenedor.appendChild(divAsiento);
+
+          seatNum++;
+        }
+      }
+    }
+  </script>
 
 </body>
 </html>
