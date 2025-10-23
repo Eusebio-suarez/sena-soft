@@ -1,33 +1,18 @@
-// src/App.tsx
-import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import NavBar from "./components/ui/NavBar";
-import FlightList from "./components//layout/FlightList";
+import FlightList from "./components/layout/FlightList";
+import PassengerForm from "./components/pages/PassengerForm";
+import PaymentForm from "./components/pages/PaymentForm";
 
-const Home: React.FC = () => (
-  <div style={{ padding: 16 }}>
-    <h1>✈️ AirBook</h1>
-    <p>Bienvenido — usa la navegación para ver vuelos.</p>
-  </div>
-);
-
-const NotFound: React.FC = () => (
-  <div style={{ padding: 16 }}>
-    <h2>404 • Página no encontrada</h2>
-  </div>
-);
-
-const App: React.FC = () => {
+function App() {
   return (
-    <BrowserRouter>
-      <NavBar />
+    <BrowserRouter> 
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/flights" element={<FlightList />} />
-        <Route path="*" element={<NotFound />} />
+        <Route path="/" element={<FlightList />} />
+        <Route path="/passengers" element={<PassengerForm />} />
+        <Route path="payment" element={<PaymentForm></PaymentForm>}></Route>
       </Routes>
     </BrowserRouter>
   );
-};
+}
 
 export default App;

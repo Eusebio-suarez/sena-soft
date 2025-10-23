@@ -22,7 +22,7 @@ public class FlightService {
                 .arrivalDate(flight.getArrivalDate())
                 .departureDate(flight.getDepartureDate())
                 .destination(flight.getDestination())
-                .origin(flight.getDestination())
+                .origin(flight.getOrigin())
                 .type(flight.getType())
                 .price((flight.getPrice()))
                 .build()
